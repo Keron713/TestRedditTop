@@ -33,6 +33,11 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
         return items.size();
     }
 
+    public void setData(ArrayList<PostModel> data){
+        items = data;
+        notifyDataSetChanged();
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView imageView;
@@ -49,6 +54,10 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
         }
 
         public void bind(PostModel model) {
+            textAuthor.setText(model.getAuthor());
+            long hours = (long)((model.getPostTime()/(1000 * 60 * 60)) % 24);
+            textPostTime.setText("" + hours + " hours ago");
+            textCommentCount.setText("Comment count: " + model.getCommentCount());
 
         }
     }

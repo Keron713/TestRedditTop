@@ -5,12 +5,27 @@ public class PostModel {
     private long postTime;
     private String url;
     private long commentCount;
+    private String fullName;
 
-    public PostModel(String author, long postTime, String url, long commentCount) {
+    public PostModel(String author, long postTime, String url, long commentCount, String fullName) {
         this.author = author;
         this.postTime = postTime;
         this.url = url;
         this.commentCount = commentCount;
+        this.fullName = fullName;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+
+    public PostModel() {
+
     }
 
     public String getAuthor() {
@@ -43,5 +58,13 @@ public class PostModel {
 
     public void setCommentCount(long commentCount) {
         this.commentCount = commentCount;
+    }
+
+    public void toPostModel(DataChildren children) {
+        this.author = children.name;
+        this.postTime = children.postTime*1000;
+        this.url = children.url;
+        this.commentCount = children.commentCount;
+        this.fullName = children.fullName;
     }
 }
