@@ -6,13 +6,14 @@ public class PostModel {
     private String url;
     private long commentCount;
     private String fullName;
+    private String thumbnail;
 
-    public PostModel(String author, long postTime, String url, long commentCount, String fullName) {
-        this.author = author;
-        this.postTime = postTime;
-        this.url = url;
-        this.commentCount = commentCount;
-        this.fullName = fullName;
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public String getFullName() {
@@ -61,10 +62,11 @@ public class PostModel {
     }
 
     public void toPostModel(DataChildren children) {
-        this.author = children.name;
+        this.author = children.author;
         this.postTime = children.postTime*1000;
         this.url = children.url;
         this.commentCount = children.commentCount;
         this.fullName = children.fullName;
+        this.thumbnail = children.thumbnail;
     }
 }
