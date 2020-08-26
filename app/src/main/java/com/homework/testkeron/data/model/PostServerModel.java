@@ -1,4 +1,4 @@
-package com.homework.testkeron.model;
+package com.homework.testkeron.data.model;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package com.homework.testkeron;
+package com.homework.testkeron.uI;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.homework.testkeron.model.PostModel;
+import com.homework.testkeron.R;
+import com.homework.testkeron.data.model.PostModel;
 
 import java.util.ArrayList;
 

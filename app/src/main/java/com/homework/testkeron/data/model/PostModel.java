@@ -1,4 +1,4 @@
-package com.homework.testkeron.model;
+package com.homework.testkeron.data.model;
 
 public class PostModel {
     private String author;
